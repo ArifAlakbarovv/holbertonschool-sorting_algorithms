@@ -5,25 +5,27 @@
  *
  * Return: Always 0
  */
-
 void selection_sort(int *array, size_t size)
 {
-size_t i, n;
-int t, *arr, z;
-arr = array;
+size_t i, j;
+int tmp, change_num, n;
+
 for (i = 0; i < size; i++)
 {
-t = arr[i];
-for (n = 0; n < size; n++)
+tmp = i;
+n = 0;
+for (j = i + 1; j < size; j++)
 {
-if (t < arr[n])
+if (array[tmp] > array[j])
 {
-z = arr[n];
-arr[n] = t;
-t = z; 
+tmp = j;
+n += 1;
 }
 }
-arr[i] = t;
+change_num = array[i];
+array[i] = array[tmp];
+array[tmp] = change_num;
+if (n != 0)
+print_array(array, size);
 }
-return ;
 }
