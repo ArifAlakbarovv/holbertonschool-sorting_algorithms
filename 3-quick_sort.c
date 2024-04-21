@@ -13,9 +13,7 @@ void quick_sort_rec(int *array, int lower, int higher, size_t size)
 	int l_p = 0;
 
 	if (lower < higher)
-
-
-	  {
+	{
 		l_p = lomuto_partition(array, lower, higher, size);
 		quick_sort_rec(array, lower, l_p - 1, size);
 		quick_sort_rec(array, l_p + 1, higher, size);
