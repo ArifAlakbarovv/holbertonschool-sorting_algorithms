@@ -1,5 +1,11 @@
 #include "sort.h"
 
+/**
+  * quick_sort - sorts array with quick sort methof
+  * @array: - input of array
+  * @size: - size of array
+  *
+  */
 void quick_sort(int *array, size_t size)
 {
 	if (!array || size < 2)
@@ -8,6 +14,14 @@ void quick_sort(int *array, size_t size)
 	quick_sort_rec(array, 0, size - 1, size);
 }
 
+/**
+  * quick_sort_rec - recursion for sorting
+  * @array: - input of array
+  * @lower: - input of lower bound
+  * @higher: - input of higher bound
+  * @size: - input of size
+  *
+  */
 void quick_sort_rec(int *array, int lower, int higher, size_t size)
 {
 	int l_p = 0;
@@ -20,6 +34,14 @@ void quick_sort_rec(int *array, int lower, int higher, size_t size)
 	}
 }
 
+/**
+  * lomuto_partition - lomuto style
+  * @array: - input of array
+  * @lower: - input of lower bound
+  * @higher: - input of upper bound
+  * @size: - input of size
+  * Return: - returns the index
+  */
 int lomuto_partition(int *array, int lower, int higher, size_t size)
 {
 	int i = 0, j = 0, pivot = 0, aux = 0;
